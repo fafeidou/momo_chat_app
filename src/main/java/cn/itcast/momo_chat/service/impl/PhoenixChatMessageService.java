@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 public class PhoenixChatMessageService implements ChatMessageService {
 
@@ -20,7 +21,9 @@ public class PhoenixChatMessageService implements ChatMessageService {
         // 1. 加载驱动
         Class.forName(PhoenixDriver.class.getName());
         // 2. 获取JDBC连接
-        connection = DriverManager.getConnection("jdbc:phoenix:master:2181");
+        Properties props = new Properties();
+        props.setProperty("phoenix.schema.isNamespaceMappingEnabled", "true");
+        connection = DriverManager.getConnection("jdbc:phoenix:master:2181",props);
     }
 
     @Override

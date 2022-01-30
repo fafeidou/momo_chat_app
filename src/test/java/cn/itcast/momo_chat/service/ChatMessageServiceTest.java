@@ -12,8 +12,8 @@ public class ChatMessageServiceTest {
     private ChatMessageService chatMessageService;
 
     public ChatMessageServiceTest() throws Exception {
-        chatMessageService = new HBaseNativeChatMessageService();
-//        chatMessageService = new PhoenixChatMessageService();
+//        chatMessageService = new HBaseNativeChatMessageService();
+        chatMessageService = new PhoenixChatMessageService();
     }
 
     @Test
@@ -24,3 +24,4 @@ public class ChatMessageServiceTest {
         }
     }
 }
+

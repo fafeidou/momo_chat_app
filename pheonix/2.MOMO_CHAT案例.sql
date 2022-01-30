@@ -1,5 +1,7 @@
 -- 1. 建立HBase已经有的表和Phoenix视图的映射
 -- 创建视图
+create schema if not exists "MOMO_CHAT";
+
 create view if not exists "MOMO_CHAT"."MSG"(
     id varchar primary key,
     "C1"."msg_time" varchar,
@@ -34,9 +36,9 @@ select
 from
     "MOMO_CHAT"."MSG"
 where
-    substr("msg_time", 0, 10) = '2020-09-10'
-and "sender_account" = '13514684105'
-and "receiver_account" = '13869783495';
+        substr("msg_time", 0, 10) = '2022-01-29'
+  and "sender_account" = '13514684105'
+  and "receiver_account" = '13647128512';
 
 -- 10 rows selected (5.648 seconds)
 
